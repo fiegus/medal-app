@@ -42,6 +42,7 @@ export const MedalTable = ({ medals }: MedalTableProps) => {
           <tr>
             <th></th>
             <th></th>
+            <th></th>
             <FilterHeadStyled
               $isActive={sortBy === SortType.Gold}
               onClick={() => handleSort(SortType.Gold)}
@@ -75,6 +76,7 @@ export const MedalTable = ({ medals }: MedalTableProps) => {
               <td>
                 <Flag flagIndex={index} />
               </td>
+              <td>{medal.code}</td>
               <td>{toNumber(medal.gold)}</td>
               <td>{toNumber(medal.silver)}</td>
               <td>{toNumber(medal.bronze)}</td>

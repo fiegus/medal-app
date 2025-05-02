@@ -5,8 +5,8 @@ type FlagProps = {
 }
 
 export const Flag = ({ flagIndex }: FlagProps) => {
-  const flagWidth = 20
-  const flagHeight = 20
+  const flagWidth = 28
+  const flagHeight = 17
 
   const xPos = -flagIndex * flagWidth
   const yPos = -Math.floor(flagIndex) * flagHeight
