@@ -7,7 +7,7 @@ export enum SortType {
   Total = 'total',
 }
 
-export const sortCountries = (
+export const getTopSortedCountries = (
   countries: CountryMedals[],
   sortBy: SortType = SortType.Gold
 ): CountryMedals[] =>
@@ -31,4 +31,4 @@ export const sortCountries = (
     }
 
     return primary !== 0 ? primary : secondary
-  })
+  }).slice(0, 10)

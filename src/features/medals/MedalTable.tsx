@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { Box, Table, Typography } from '@mui/joy'
 import { CountryMedals } from './api'
 import { Flag } from './Flag'
-import { SortType, sortCountries } from './helpers'
+import { SortType, getTopSortedCountries } from './helpers'
 import styled from 'styled-components'
 
 interface MedalTableProps {
@@ -27,7 +27,7 @@ export const MedalTable = ({ medals }: MedalTableProps) => {
 
   useEffect(() => {
     console.log(sortBy)
-    setSortedMedals(sortCountries(medals, sortBy))
+    setSortedMedals(getTopSortedCountries(medals, sortBy))
   }, [searchParams, medals])
 
   const handleSort = (sortType: SortType) => {
