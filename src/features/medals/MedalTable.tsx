@@ -74,7 +74,7 @@ export const MedalTable = ({ medals }: MedalTableProps) => {
             <tr key={medal.code}>
               <td>{index + 1}</td>
               <td>
-                <Flag flagIndex={index} />
+                <Flag flagCode={medal.code} />
               </td>
               <td>{medal.code}</td>
               <td>{toNumber(medal.gold)}</td>
