@@ -1,5 +1,8 @@
 import React from 'react'
 
+const FLAG_WIDTH = 28
+const FLAG_HEIGHT = 17
+
 type FlagProps = {
   flagCode: string
 }
@@ -22,21 +25,16 @@ const mapFlagToPosition = (flagCode: string) =>
   ].findIndex((country) => country === flagCode)
 
 export const Flag = ({ flagCode }: FlagProps) => {
-  const flagWidth = 28
-  const flagHeight = 17
-
   const flagIndex = mapFlagToPosition(flagCode)
-
-  const xPos = -flagIndex * flagWidth
-  const yPos = -Math.floor(flagIndex) * flagHeight
+  const flagPosition = -flagIndex * FLAG_HEIGHT
 
   return (
     <div
       style={{
-        width: `${flagWidth}px`,
-        height: `${flagHeight}px`,
+        width: `${FLAG_WIDTH}px`,
+        height: `${FLAG_HEIGHT}px`,
         backgroundImage: 'url(/public/flags.png)',
-        backgroundPosition: `${xPos}px ${yPos}px`,
+        backgroundPosition: `0px ${flagPosition}px`,
         backgroundSize: 'auto',
       }}
     ></div>
