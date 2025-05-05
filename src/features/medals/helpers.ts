@@ -14,13 +14,13 @@ export const getTopSortedCountries = (
   [...countries].sort((a, b) => {
     let primary: number, secondary: number
 
-    if (sortBy === 'gold') {
+    if (sortBy === SortType.Gold) {
       primary = b.gold - a.gold
       secondary = b.silver - a.silver
-    } else if (sortBy === 'silver') {
+    } else if (sortBy === SortType.Silver) {
       primary = b.silver - a.silver
       secondary = b.gold - a.gold
-    } else if (sortBy === 'bronze') {
+    } else if (sortBy === SortType.Bronze) {
       primary = b.bronze - a.bronze
       secondary = b.gold - a.gold
     } else {
