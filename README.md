@@ -1,12 +1,40 @@
-# React + Vite
+# Olympic Medal Count Mini App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a mini React app that displays the top 10 countries based on their Olympic medal counts. Users can sort results by gold, silver, bronze, or total medals using URL parameters or by clicking table headers.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Displays top 10 countries by medals
+- Sort by `gold`, `silver`, `bronze`, or `total` medals
+- Tie-breaking logic:
+  - Total → Gold
+  - Gold → Silver
+  - Silver → Gold
+  - Bronze → Gold
+- Sorting can be changed:
+  - Via `?sort=` URL query parameter
+  - By clicking on table headers
+- Uses `flags.png` sprite sheet to render country flags
+- Medals data is loaded via simulated async API call (local JSON)
+- Shows error message on load failure
+- Written in TypeScript + React
+- No data re-fetching when sorting changes
 
-## Expanding the ESLint configuration
+## URL Parameter
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `?sort=` – Accepts: `gold` (default), `silver`, `bronze`, `total`
+
+Example:  
+`http://localhost:3000/?sort=total`
+
+## Setup & Run
+
+```bash
+npm install
+npm start
+```
+
+## Build
+```bash
+npm run build
+```
